@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+
+dir="$HOME/.config/rofi/scripts/styles"
+rofi_command="rofi -theme $dir/quicklinks.rasi"
+
+#links 
+declare -A links
+links[""]="https://www.github.com" 
+links[""]="https://www.gmail.com"
+links[""]="https://www.youtube.com"
+links["Neso"]="https://www.nesoacademy.org"
+links["google"]="https://www.github.com" 
+
+# Error msg
+msg() {
+	rofi -theme "$dir/message.rasi" -e "$1"
+}
+
+
+# Browser
+if [[ -f /usr/bin/firefox ]]; then
+	app="firefox"
+else
+	msg "No suitable web browser found!"
+	exit 1
+fi
+
+
+options=""
+j=0
+for i in ${!links[@]}; do
+	j=$((j+1))
+	if [ $j -eq ${#links[@]} ];then
+	options+="$i"
+	else
+	options+="$i\n"
+	fi
+done
+
+
+
+
+chosen="$(echo -e "$options" | $rofi_command -p "Open In  :  $app" -dmenu -selected-row 0)"
+
+if [$choosen];then
+ $app ${links[$chosen]} &
+fi
+        
+

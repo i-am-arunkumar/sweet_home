@@ -1,0 +1,128 @@
+/*
+ *
+ * Author  : qmaxrun
+ *
+ */
+
+configuration {
+    show-icons:                     false;
+	font:                      		"Comfortaa 12";
+    disable-history:                false;
+	sidebar-mode: 					false;
+}
+
+@import "colors.rasi"
+
+* {
+    background-color:               @background;
+    text-color:                     @foreground;
+}
+
+window {
+    transparency:                   "real";
+    border-radius:                  12px;
+    location:                       southeast;
+	width:							500px;
+    x-offset:                       -15px;
+    y-offset:                       -45px;
+}
+
+prompt {
+    enabled: 						true;
+    padding:                        10px;
+	background-color: 				@background-light;
+	text-color: 					@se;
+    border:                  		0px 2px 0px 2px;
+    border-radius:                  10px;
+    border-color:                  	@se;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							" Quick Links ";
+	background-color: 				@se;
+	text-color: 					@background;
+    padding:                        10px 10px 0px 10px;
+    border-radius:                  10px;
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    spacing:                        12px;
+    background-color:               @background;
+    text-color:                     @foreground;
+    expand:                         false;
+    border:                  		0px;
+    border-radius:                  0px;
+    border-color:                  	@se;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+listview {
+    columns:						6;
+    lines:							1;
+    spacing:                        12px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ inputbar, listview ];
+    spacing:                        12px;
+    margin:                         12px;
+}
+
+element {
+    background-color:               @background-light;
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    padding : 12px;
+    border-radius:                  12px;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+}
+
+element-text {
+    background-color: 				inherit;
+    text-color:       				inherit;
+	font:							"feather 20";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         19px 10px 19px 10px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @off;
+    text-color:                     @background;
+    border-radius:                  12px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @on;
+    text-color:                     @background;
+}
+
+element selected {
+    background-color:               @background-light;
+    text-color:                     @se;
+    border:                  		0px 2px 0px 2px;
+    border-radius:                  12px;
+    border-color:                  	@se;
+}
+
+element selected.urgent {
+    background-color:               @on;
+    text-color:                     @background;
+}
+
+element selected.active {
+    background-color:               @off;
+    color:                          @background;
+}

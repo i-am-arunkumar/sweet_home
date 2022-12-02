@@ -1,0 +1,28 @@
+/* Confirm Dialog */
+
+@import "colors.rasi"
+
+* {
+    background-color:       @bg;
+    text-color:             @fg;
+}
+
+window {
+    transparency:                   "real";
+    padding : 25px;
+    background-color:               @bg;
+    text-color:                     @fg;
+	border:							0px 0px 0px 0px;
+	border-color:					@ac;
+    border-radius:                  8px;
+	width:							320px;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+entry {
+    text-color:				@ac;
+}
+
+

@@ -1,0 +1,57 @@
+#! /bin/sh
+#binary space partitioning window manager
+
+#autostart 
+~/.config/bspwm/autostart.sh
+
+bspc monitor -d term web editor devEnv files media graphics WebApps 
+
+bspc config border_width         0
+bspc config window_gap          12
+bspc config focus_follows_pointer true
+
+bspc config top_padding 35
+bspc config left_padding 2
+bspc config right_padding 2
+bspc config bottom_padding 2
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
+bspc config single_monocle       true
+bspc config ignore_ewmh_focus true
+
+bspc config pointer_modifier mod0  
+bspc config pointer_action2 resize_side   
+bspc config pointer_action2 resize_corner
+bspc config pointer_action1 move
+bspc config pointer_motion_interval 60
+
+
+
+#app rules
+
+bspc rule -a Plank layer=above manage=on border=off focus=off locked=on
+bspc rule -a Nitrogen state=floating rectangle=720x420+48+48
+bspc rule -a Viewnior state=floating
+bspc rule -a Galculator state=floating
+bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a Thunar desktop='^5' follow=on
+bspc rule -a "firefox" desktop='^2' follow=on
+bspc rule -a qBittorrent desktop='^2' follow=on 
+bspc rule -a vlc desktop='^6' follow=on
+bspc rule -a "Text Editor" desktop='^3' state=floating follow=on
+bspc rule -a "*:*:^mpd_bar$" layer=above
+bspc rule -a Zathura desktop='^5' follow=on
+bspc rule -a mpv state=floating
+bspc rule -a BeeRef state=floating
+bspc rule -a viewnoir state=floating
+bspc rule -a kruler state=floating
+bspc rule -a arandr state=floating
+bspc rule -a ferdium state=floating desktop='^8'
+
+
+
+
+
+

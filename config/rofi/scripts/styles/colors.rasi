@@ -1,0 +1,16 @@
+/* colors */
+
+* {
+  al:   #00000000;
+  bg:   #1d1f21aa;
+  bga:  #1d1f21FF;
+  fg:   #93A1A1FF;
+  ac:   #D12F2CFF;
+  se:   #33C5BAFF;
+  accent:           #D12F2CFF;
+  background:       #1d1f21aa;
+  background-light: #1E262Baa;
+  foreground:       #93A1A1FF;
+  on:               #33C5BAFF;
+  off:              #ef5350FF;
+}

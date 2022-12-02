@@ -1,0 +1,5 @@
+start=6354.134000
+volume=130.000000
+fullscreen=yes
+ontop=yes
+vf=@autocrop-crop:lavfi-crop=w=1280:h=536:y=0:x=0
